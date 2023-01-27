@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  border: 1px solid rgb(148, 57, 57)
+}
+
+html {
+  scroll-behavior: smooth; 
+}
+
+body {
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4d2323;
+  background-image: url(https://images.pexels.com/photos/6847584/pexels-photo-6847584.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-size:cover
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #633974;
+}
+
+.my-name {
+  
+}
+img {
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: 100% 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-item {
+  
+}  
+
+.nav-link {
+  padding: 0 15px;
+  line-height: 50px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+  }
+}
