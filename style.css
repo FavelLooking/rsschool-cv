@@ -31,9 +31,6 @@ body {
   color: #633974;
 }
 
-.my-name {
-  
-}
 img {
   border-radius: 50px;
   width: 100px;
@@ -52,7 +49,7 @@ img {
 }
 
 .nav-item {
-  
+  display: flex;
 }  
 
 .nav-link {
