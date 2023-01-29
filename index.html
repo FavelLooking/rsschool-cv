@@ -31,8 +31,8 @@
     <main class="main">
       <div class="container main-container">
         <section class="section" id="profile">
-          <img class="myphoto" src="assets/img/Mdm1tQ0exLQ.jpg" alt="my-photo">
-          <h1 class="section-title">Pavel Lukin</h1>
+          <h1 class="section-title my-name">Pavel Lukin</h1>
+          <img class="myphoto" src="assets/img/uH0MzVccQww.jpg" alt="my-photo">
         </section>
         <section class="section" id="contacts">
           <h2 class="section-title">Contacts</h2>
@@ -44,7 +44,7 @@
         </section>
         <section class="section" id="about-me">
           <h2 class="section-title">About Me</h2>
-          <p>I have a little business (Comicbook shop). And have experience in organization public entertainment events </p>
+          <p>I have a comic book shop</p>
         </section>
         <section class="section" id="skills">
           <h2 class="section-title">Skills</h2>
@@ -59,24 +59,16 @@
           <h2 class="section-title">Code Example</h2>
           
           <pre>
-            <code>
-  function findOdd(A) {
-    if (A.length == 1)
-      return Number(A);
-    else {
-      for(let i=0; i&lt;=A.length; i++) {
-        if (A.filter(val=>val===A[i])) {
-          return A[i]
-        } else continue;
-      }
-    }
-  }
-            </code>
+  <code>const sortMyString = s => {
+  let even = s.filter((v, i) => i % 2 === 0).join('')
+  let odd = s.filter((v, i) => i % 2 !== 0).join('')
+  return even + ' ' + odd
+}</code>
           </pre>
         </section>
         <section class="section" id="education">
           <h2 class="section-title">Education</h2>
-          <p>University: Murmansk State University, Specialist degree in Electrical Supplying</p>
+          <p>University: Murmansk State Technical University<br>Specialist degree in Electrical Supplying</p></p>
         </section>
         <section class="section" id="courses">
           <h2 class="section-title">Courses</h2>
@@ -94,7 +86,15 @@
 
     <footer class="main">
       <div class="container">
-        <p>my CV footer</p>
+        <a href="https://rs.school/js/">
+          <img class="footer-logo" src="https://pbs.twimg.com/profile_images/729441886130339842/ML_8Y8N4_400x400.jpg" alt="logo rolling Scopes">
+        </a>
+        
+        <a href="https://github.com/FavelLooking">My Github</a>
+        <p class="footer-text">2023 год</p>
+        
+        
+
       </div>
     </footer>
 
