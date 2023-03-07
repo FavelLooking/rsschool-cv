@@ -73,10 +73,6 @@ img {
   
 }
 
-.nav-item {
-
-}  
-
 .nav-link {
   padding: 0 15px;
   line-height: 50px;
@@ -115,7 +111,7 @@ img {
   display: flex;
   align-items: center;
   justify-content:center;
-  border: dotted 1px #000000;
+  
   border-radius: 10px;
 }
 
