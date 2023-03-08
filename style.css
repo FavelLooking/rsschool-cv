@@ -3,8 +3,7 @@
 }
 
 html {
-  scroll-behavior: smooth; 
-  
+  scroll-behavior: smooth;
 }
 
 p {
@@ -26,7 +25,6 @@ body {
   color: #4d2323;
   background-image: url(https://images.pexels.com/photos/6847584/pexels-photo-6847584.jpeg?auto=compress&cs=tinysrgb&w=600);
   background-size:cover;
-  
 }
 
 .section-title {
@@ -36,13 +34,11 @@ body {
   letter-spacing: 4px;
   color: #633974;
   text-align: center;
-  
 }
 
 .my-name {
   font-size: 47px;
   margin-right: 10px;
-  
 }
 
 pre {
@@ -70,7 +66,6 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: right;
-  
 }
 
 .nav-link {
@@ -93,7 +88,7 @@ img {
 }
 
 .footer-text {
-  display: inline;  
+  display: inline;
 }
 
 .footer-logo {
