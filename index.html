@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100&display=swap" rel="stylesheet">
+    <title>CV</title>
+  </head>
+  
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+            <li class="nav-item"><a href="#about-me" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#code-example" class="nav-link">Code Example</a></li>
+            <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+            <li class="nav-item"><a href="#courses" class="nav-link">Courses</a></li>
+            <li class="nav-item"><a href="#languages" class="nav-link">Languages</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="main">
+      <div class="container main-container">
+        <section class="section" id="profile">
+          <h1 class="section-title my-name">Pavel Lukin</h1>
+          <img class="myphoto" src="assets/img/uH0MzVccQww.jpg" alt="my-photo">
+        </section>
+        <section class="section" id="contacts">
+          <h2 class="section-title">Contacts</h2>
+            <ul>
+              <li>Location: Tbilisi, Georgia</li>
+              <li>Email: intwestpol@gmail.com</li>
+              <li>GitHub: FavelLooking</li>
+            </ul>
+        </section>
+        <section class="section" id="about-me">
+          <h2 class="section-title">About Me</h2>
+          <p>I have a comic book shop</p>
+        </section>
+        <section class="section" id="skills">
+          <h2 class="section-title">Skills</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Git</li>
+          </ul>
+        </section>
+        <section class="section" id="code-example">
+          <h2 class="section-title">Code Example</h2>
+          
+          <pre>
+  <code>const sortMyString = s =&gt; {
+  let even = s.filter((v, i) =&gt; i % 2 === 0).join('')
+  let odd = s.filter((v, i) =&gt; i % 2 !== 0).join('')
+  return even + ' ' + odd
+}
+  </code>
+          </pre>
+        </section>
+        <section class="section" id="education">
+          <h2 class="section-title">Education</h2>
+          <p>University: Murmansk State Technical University<br>Specialist degree in Electrical Supplying</p>
+        </section>
+        <section class="section" id="courses">
+          <h2 class="section-title">Courses</h2>
+          <p>FreeCodeCamp</p>
+        </section>
+        <section class="section" id="languages">
+          <h2 class="section-title">Languages</h2>
+          <ul>
+            <li>English (Intermediate)</li>
+            <li>Russian (Native)</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="main">
+      <div class="container">
+        <a href="https://rs.school/js/">
+          <img class="footer-logo" src="https://pbs.twimg.com/profile_images/729441886130339842/ML_8Y8N4_400x400.jpg" alt="logo rolling Scopes">
+        </a>
+        
+        <a href="https://github.com/FavelLooking">My Github</a>
+        <p class="footer-text">2023 год</p>
+        
+      </div>
+    </footer>
+  <!-- # [rsschool-cv](https://FavelLooking.github.io/rsschool-cv/cv)-->
+  </body>
+</html>
