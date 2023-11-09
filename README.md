@@ -1,1 +1,1 @@
-# [rsschool-cv](https://favellooking.github.io/rsschool-cv/cv)https://GITHUB-USERNAME.github.io/rsschool-cv/cv
+# [rsschool-cv](https://favellooking.github.io/rsschool-cv/cv) https://favellooking.github.io/rsschool-cv/cv
