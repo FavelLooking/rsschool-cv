@@ -17,6 +17,7 @@ I have a business (Comicbook shop). And have experience in organization public e
 - Git
 - SCSS
 - Webpack
+- Node JS
 
 ## Code Example:
 ```
