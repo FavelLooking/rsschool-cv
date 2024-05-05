@@ -1,25 +1,34 @@
-name: Approval Check
+name: PR Merge Workflow
 
 on:
   pull_request_review:
     types: [submitted]
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
 
 jobs:
   check-approvals:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Approvals
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { data: reviews } = await github.pulls.listReviews({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            });
-            
-            const approvals = reviews.filter(review => review.state === 'APPROVED');
-            if (approvals.length < 2) {
-              core.setFailed('At least two approvals are required');
-            }
+      - name: Check for required approvals
+        id: check-approvals
+        run: |
+          const { data: reviews } = await github.pulls.listReviews({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.payload.pull_request.number
+          });
+
+          const approvals = reviews.filter(review => review.state === 'APPROVED');
+          if (approvals.length < 2) {
+            core.setFailed('At least two approvals are required');
+          }
+
+  merge-if-approved:
+    runs-on: ubuntu-latest
+    needs: [check-approvals]
+    if: ${{ needs.check-approvals.result == 'success' }}
+    steps:
+      - name: Merge PR if approved
+        run: |
+          echo "Two approvals received. Merging PR now."
