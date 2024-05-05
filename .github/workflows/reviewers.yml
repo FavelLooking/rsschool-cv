@@ -14,8 +14,8 @@ jobs:
       - name: Get pull request info
         id: pr-info
         run: |
-          echo "::set-output name=approvals::$(curl -s -H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\" \
-          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews | jq '.[] | select(.state == \"APPROVED\")' | jq length)"
+          echo "::set-output name=approvals::$(curl -s -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+          https://api.github.com/repos/FavelLooking/rsschool-cv/pulls/6/reviews | jq '.[] | select(.state == \"APPROVED\")' | jq length)"
 
       - name: Merge pull request if approved
         if: ${{ steps.pr-info.outputs.approvals == 2 }} # Change the number of required approvals as needed
