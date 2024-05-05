@@ -1,23 +1,24 @@
-name: Minimum Reviewers Check
+name: Merge Pull Request
+
 on:
   pull_request:
     types: [opened, edited, reopened, synchronize]
 
 jobs:
-  check-reviewers:
+  merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Reviewers
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { data: pullRequest } = await github.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number
-            });
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            if (pullRequest.requested_reviewers.length === 0) {
-              core.setFailed('At least one reviewer is required');
-            }
+      - name: Get pull request info
+        id: pr-info
+        run: |
+          echo "::set-output name=approvals::$(curl -s -H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews | jq '.[] | select(.state == \"APPROVED\")' | jq length)"
+
+      - name: Merge pull request if approved
+        if: ${{ steps.pr-info.outputs.approvals == 2 }} # Change the number of required approvals as needed
+        run: |
+          # Merge pull request using GitHub API
+          # Example command: curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge
