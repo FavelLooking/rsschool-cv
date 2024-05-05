@@ -5,7 +5,7 @@ on:
     types: [submitted]
 
 jobs:
-  merge-if-approved:
+  check-approvals:
     runs-on: ubuntu-latest
     steps:
       - name: Check for required approvals
@@ -14,8 +14,12 @@ jobs:
           approvals=$(jq -r '.pull_request.reviews[] | select(.state == "approved") | .user.login' $GITHUB_EVENT_PATH | sort -u | wc -l)
           echo "::set-output name=approvals::$approvals"
 
-      - name: Merge PR if approved
+      - name: Update PR status
         if: ${{ steps.check-approvals.outputs.approvals == '2' }}
         run: |
-          echo "Two approvals received. Merging PR now."
-          # Добавьте здесь команду для слияния пулл реквеста
+          echo "Two approvals received. Ready to merge."
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge" \
+            -d '{"merge_method":"squash"}'
